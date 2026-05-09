@@ -1,0 +1,786 @@
+[
+  {
+    "question": "What is IDS?",
+    "answer": "IDS stands for Intrusion Detection System. It monitors network traffic and detects suspicious or malicious activity."
+  },
+  {
+    "question": "What is the purpose of this IDS project?",
+    "answer": "This project captures network packets, extracts useful packet features, and uses machine learning to classify traffic as normal or suspicious."
+  },
+  {
+    "question": "How does this IDS detect attacks?",
+    "answer": "The dashboard captures packets with Scapy, extracts features such as packet length, protocol, source port, destination port, TCP, UDP, and ICMP flags, then passes those features to the trained model."
+  },
+  {
+    "question": "What does normal traffic mean?",
+    "answer": "Normal traffic means the IDS model did not find a strong attack pattern or unusual behavior in the captured packet."
+  },
+  {
+    "question": "What does suspicious activity mean?",
+    "answer": "Suspicious activity means the IDS detected traffic that may be unsafe, unusual, or similar to known attack behavior."
+  },
+  {
+    "question": "What does high threat anomaly mean?",
+    "answer": "High threat anomaly means the anomaly detection model found traffic that is very different from the normal traffic pattern."
+  },
+  {
+    "question": "What does low threat mean?",
+    "answer": "Low threat means the classification model detected a possible attack pattern, but the anomaly detector did not mark it as highly unusual."
+  },
+  {
+    "question": "What is packet sniffing?",
+    "answer": "Packet sniffing is the process of capturing network packets so they can be inspected, logged, or analyzed for security monitoring."
+  },
+  {
+    "question": "What is Scapy?",
+    "answer": "Scapy is a Python library used to capture, inspect, create, and manipulate network packets."
+  },
+  {
+    "question": "What is TCP?",
+    "answer": "TCP is a connection-oriented transport protocol used by many services such as web browsing, email, and file transfers. It focuses on reliable delivery."
+  },
+  {
+    "question": "What is UDP?",
+    "answer": "UDP is a connectionless transport protocol used for fast communication such as streaming, DNS, and gaming. It is faster than TCP but does not guarantee delivery."
+  },
+  {
+    "question": "What is ICMP?",
+    "answer": "ICMP is a network protocol used for diagnostic and control messages, such as ping requests and unreachable destination messages."
+  },
+  {
+    "question": "What is a DDoS attack?",
+    "answer": "A DDoS attack floods a target system with a large amount of traffic from many sources, making the service slow or unavailable."
+  },
+  {
+    "question": "What is a port scan?",
+    "answer": "A port scan is an attempt to check which ports are open on a system. Attackers use it to discover possible entry points."
+  },
+  {
+    "question": "What is brute force attack?",
+    "answer": "A brute force attack repeatedly tries usernames, passwords, or keys until the attacker finds a correct one."
+  },
+  {
+    "question": "What is malware?",
+    "answer": "Malware is malicious software designed to damage, steal data, spy on activity, or gain unauthorized access to a system."
+  },
+  {
+    "question": "What is phishing?",
+    "answer": "Phishing is a social engineering attack where an attacker tricks users into revealing sensitive information such as passwords or OTPs."
+  },
+  {
+    "question": "What should I do if an attack is detected?",
+    "answer": "Review the latest alert, identify source and destination details, block suspicious IP addresses if needed, check firewall logs, and continue monitoring for repeated activity."
+  },
+  {
+    "question": "Why does the IDS use machine learning?",
+    "answer": "Machine learning helps the IDS identify patterns in traffic and detect activity that may be difficult to catch with only fixed rules."
+  },
+  {
+    "question": "Which features are used by this IDS?",
+    "answer": "This IDS uses packet length, protocol, source port, destination port, and flags indicating TCP, UDP, and ICMP traffic."
+  },
+  {
+    "question": "What is anomaly detection?",
+    "answer": "Anomaly detection identifies activity that is different from expected normal behavior. It is useful for finding unknown or unusual threats."
+  },
+  {
+    "question": "What is Random Forest?",
+    "answer": "Random Forest is a machine learning algorithm that combines multiple decision trees to make more accurate and stable predictions."
+  },
+  {
+    "question": "What is Isolation Forest?",
+    "answer": "Isolation Forest is an anomaly detection algorithm that finds unusual data points by separating them from normal data."
+  },
+  {
+    "question": "Why is cybersecurity important?",
+    "answer": "Cybersecurity protects systems, networks, and data from unauthorized access, damage, theft, and service disruption."
+  },
+  {
+    "question": "How can I improve this IDS project?",
+    "answer": "You can improve it by training on more recent datasets, adding IP reputation checks, saving alerts to a database, adding login protection, and improving alert explanations."
+  },
+  {
+    "question": "What are false positives?",
+    "answer": "False positives are normal events that the IDS incorrectly marks as suspicious. Reducing false positives is important for reliable security monitoring."
+  },
+  {
+    "question": "What are false negatives?",
+    "answer": "False negatives are real threats that the IDS fails to detect. They are dangerous because attacks may go unnoticed."
+  },
+  {
+    "question": "What is network protocol?",
+    "answer": "A network protocol is a set of rules that devices use to communicate over a network."
+  },
+  {
+    "question": "What is source port?",
+    "answer": "The source port is the port number used by the sending device or application during network communication."
+  },
+  {
+    "question": "What is destination port?",
+    "answer": "The destination port is the port number on the receiving device that identifies the target service or application."
+  },
+  {
+    "question": "Explain this project in simple words.",
+    "answer": "This project is an AI-based Intrusion Detection System that monitors live network traffic, classifies packets as normal or suspicious, and displays alerts in a Streamlit dashboard."
+  },
+  {
+    "question": "What is the title of this project?",
+    "answer": "The project is a Real-Time AI Intrusion Detection System using machine learning, packet capture, and a Streamlit dashboard."
+  },
+  {
+    "question": "What problem does this project solve?",
+    "answer": "It helps detect suspicious network activity early by monitoring packets and classifying traffic in real time."
+  },
+  {
+    "question": "What is the main objective of this project?",
+    "answer": "The main objective is to build a real-time IDS that captures network packets, extracts features, predicts threats, and presents results through an interactive dashboard."
+  },
+  {
+    "question": "What are the modules in this project?",
+    "answer": "The main modules are packet capture, feature extraction, machine learning prediction, live logging, dashboard visualization, and the custom chatbot assistant."
+  },
+  {
+    "question": "Which programming language is used in this project?",
+    "answer": "This project is built in Python because Python has strong libraries for machine learning, networking, web dashboards, and data processing."
+  },
+  {
+    "question": "Why did you use Streamlit?",
+    "answer": "Streamlit is used because it makes it easy to build an interactive dashboard for metrics, logs, charts, and chatbot interaction using Python."
+  },
+  {
+    "question": "Why did you use Flask?",
+    "answer": "Flask is used to expose a simple prediction API so external clients can send packet features and receive IDS predictions."
+  },
+  {
+    "question": "What is dashboard_live.py?",
+    "answer": "dashboard_live.py is the main Streamlit dashboard file. It handles live packet capture, traffic metrics, log display, chart visualization, and chatbot interaction."
+  },
+  {
+    "question": "What is app.py?",
+    "answer": "app.py is the Flask API file. It provides a /predict endpoint that accepts feature values and returns whether traffic is normal or suspicious."
+  },
+  {
+    "question": "What is chatbot_engine.py?",
+    "answer": "chatbot_engine.py contains the custom chatbot logic. It searches chatbot_data.json and also answers questions using the current IDS dashboard context."
+  },
+  {
+    "question": "What is chatbot_data.json?",
+    "answer": "chatbot_data.json is the knowledge base for the custom chatbot. It stores questions and answers about IDS, cybersecurity, and this project."
+  },
+  {
+    "question": "What is model.pkl?",
+    "answer": "model.pkl is the saved trained machine learning model used by the IDS to classify traffic."
+  },
+  {
+    "question": "What is label_encoder.pkl?",
+    "answer": "label_encoder.pkl stores label encoding information that may be used to convert class names into numeric labels or decode predictions."
+  },
+  {
+    "question": "What is logs.txt?",
+    "answer": "logs.txt is a simple text file that can store IDS log output or example traffic results."
+  },
+  {
+    "question": "What is requirements.txt?",
+    "answer": "requirements.txt lists the Python packages needed to run the project, such as Streamlit, Scapy, pandas, scikit-learn, and Flask."
+  },
+  {
+    "question": "What is the role of src folder?",
+    "answer": "The src folder contains supporting Python scripts for prediction, training, packet capture, inspection, and real-time IDS logic."
+  },
+  {
+    "question": "What is predict.py?",
+    "answer": "predict.py loads the trained model and provides a predict function that converts input features into a normal or threat result."
+  },
+  {
+    "question": "What is train_model.py?",
+    "answer": "train_model.py is used to train the machine learning model using network traffic datasets and save the trained model for prediction."
+  },
+  {
+    "question": "What is live_capture.py?",
+    "answer": "live_capture.py is related to capturing live network packets so they can be analyzed by the IDS."
+  },
+  {
+    "question": "What is realtime_ids.py?",
+    "answer": "realtime_ids.py contains logic for real-time intrusion detection, including live packet processing and alert generation."
+  },
+  {
+    "question": "What datasets are used in this project?",
+    "answer": "The project includes NSL-KDD and UNSW-style datasets, which are common datasets used for intrusion detection research and training."
+  },
+  {
+    "question": "What is NSL-KDD dataset?",
+    "answer": "NSL-KDD is a benchmark intrusion detection dataset used to train and evaluate models on normal and attack traffic patterns."
+  },
+  {
+    "question": "What is UNSW dataset?",
+    "answer": "UNSW-NB15 is a modern network intrusion dataset that contains normal traffic and multiple attack categories for IDS research."
+  },
+  {
+    "question": "Why use two datasets?",
+    "answer": "Using more than one dataset helps the IDS learn broader traffic patterns and improves the project explanation for real-world intrusion detection."
+  },
+  {
+    "question": "How does packet capture work in this project?",
+    "answer": "The dashboard uses Scapy sniffing to capture packets from the network interface, then processes each packet to extract useful features."
+  },
+  {
+    "question": "What happens when I click Start IDS?",
+    "answer": "When Start IDS is clicked, the dashboard starts a background packet sniffing thread that captures live packets and sends them to the model."
+  },
+  {
+    "question": "What happens when I click Stop IDS?",
+    "answer": "When Stop IDS is clicked, the shared running state is set to false so the packet sniffing loop stops."
+  },
+  {
+    "question": "Why does packet capture need permission?",
+    "answer": "Packet capture may need administrator permission or Npcap on Windows because it reads low-level network traffic from the device."
+  },
+  {
+    "question": "What is Npcap?",
+    "answer": "Npcap is a Windows packet capture driver that allows tools like Scapy and Wireshark to capture network traffic."
+  },
+  {
+    "question": "Why are logs updated automatically?",
+    "answer": "The dashboard uses auto-refresh so live logs and metrics update regularly while IDS monitoring is running."
+  },
+  {
+    "question": "What does the traffic overview chart show?",
+    "answer": "The traffic overview chart compares the count of normal packets, suspicious events, and processing errors."
+  },
+  {
+    "question": "What does the status metric show?",
+    "answer": "The status metric shows whether the IDS is currently running or stopped."
+  },
+  {
+    "question": "What does the threats metric show?",
+    "answer": "The threats metric shows how many suspicious events have been detected in the current dashboard session."
+  },
+  {
+    "question": "What does the normal metric show?",
+    "answer": "The normal metric shows how many captured packets were classified as normal traffic."
+  },
+  {
+    "question": "What does total packets show?",
+    "answer": "Total packets shows the total number of log entries processed by the IDS in the current session."
+  },
+  {
+    "question": "Why is the chart empty?",
+    "answer": "The chart is empty when no packets have been captured yet. Start IDS and generate network traffic to populate it."
+  },
+  {
+    "question": "Why are all packets normal?",
+    "answer": "Many normal browsing activities are classified as normal because they do not match strong attack or anomaly patterns."
+  },
+  {
+    "question": "Why are many packets suspicious?",
+    "answer": "Many packets may appear suspicious if the model sees unusual ports, protocols, packet sizes, or patterns different from its training data."
+  },
+  {
+    "question": "What is feature extraction?",
+    "answer": "Feature extraction means converting raw packet information into numeric values that a machine learning model can understand."
+  },
+  {
+    "question": "Why use packet length as a feature?",
+    "answer": "Packet length can help identify unusual behavior because some attacks generate packets with abnormal sizes or repeated patterns."
+  },
+  {
+    "question": "Why use protocol as a feature?",
+    "answer": "Protocol helps the model understand whether traffic is TCP, UDP, ICMP, or another type, which is useful for attack detection."
+  },
+  {
+    "question": "Why use source and destination ports?",
+    "answer": "Ports help identify the services involved in communication. Unusual or targeted ports can indicate scanning or attack attempts."
+  },
+  {
+    "question": "Why use TCP UDP ICMP flags?",
+    "answer": "These flags tell the model what kind of network protocol is present, helping it separate normal traffic from suspicious patterns."
+  },
+  {
+    "question": "What is model prediction?",
+    "answer": "Model prediction is the process where the trained machine learning model takes packet features and outputs a traffic class."
+  },
+  {
+    "question": "What is classification?",
+    "answer": "Classification is a machine learning task where input data is assigned to categories such as normal traffic or attack traffic."
+  },
+  {
+    "question": "What is supervised learning?",
+    "answer": "Supervised learning trains a model using labeled examples, such as packets already marked as normal or attack."
+  },
+  {
+    "question": "What is unsupervised learning?",
+    "answer": "Unsupervised learning finds patterns or anomalies without needing labeled examples."
+  },
+  {
+    "question": "Why combine classifier and anomaly detector?",
+    "answer": "Combining both can detect known attack patterns with classification and unusual unknown behavior with anomaly detection."
+  },
+  {
+    "question": "What is cyber attack?",
+    "answer": "A cyber attack is an attempt to damage, steal, disrupt, or gain unauthorized access to a computer system or network."
+  },
+  {
+    "question": "What is network security?",
+    "answer": "Network security protects computer networks from misuse, unauthorized access, malware, and service disruption."
+  },
+  {
+    "question": "What is firewall?",
+    "answer": "A firewall controls incoming and outgoing network traffic using security rules. It can block suspicious or unwanted connections."
+  },
+  {
+    "question": "What is the difference between firewall and IDS?",
+    "answer": "A firewall blocks or allows traffic based on rules, while an IDS monitors traffic and alerts when suspicious activity is detected."
+  },
+  {
+    "question": "What is IPS?",
+    "answer": "IPS stands for Intrusion Prevention System. Unlike IDS, it can automatically block or prevent suspicious traffic."
+  },
+  {
+    "question": "Difference between IDS and IPS?",
+    "answer": "IDS detects and alerts about threats, while IPS detects and actively blocks or prevents threats."
+  },
+  {
+    "question": "What is signature based detection?",
+    "answer": "Signature based detection identifies attacks by matching traffic against known attack patterns or signatures."
+  },
+  {
+    "question": "What is anomaly based detection?",
+    "answer": "Anomaly based detection identifies traffic that is different from normal behavior, which can help find unknown attacks."
+  },
+  {
+    "question": "Which detection method is used here?",
+    "answer": "This project uses machine learning classification and optional anomaly detection to classify traffic and identify unusual behavior."
+  },
+  {
+    "question": "What is DoS attack?",
+    "answer": "A DoS attack attempts to make a system or service unavailable by overwhelming it with traffic or resource requests."
+  },
+  {
+    "question": "Difference between DoS and DDoS?",
+    "answer": "DoS usually comes from one source, while DDoS comes from many distributed sources attacking the same target."
+  },
+  {
+    "question": "What is SQL injection?",
+    "answer": "SQL injection is an attack where malicious SQL code is inserted into application inputs to access or manipulate a database."
+  },
+  {
+    "question": "What is XSS?",
+    "answer": "XSS stands for Cross-Site Scripting. It injects malicious scripts into web pages viewed by users."
+  },
+  {
+    "question": "What is man in the middle attack?",
+    "answer": "A man-in-the-middle attack happens when an attacker secretly intercepts or modifies communication between two parties."
+  },
+  {
+    "question": "What is spoofing?",
+    "answer": "Spoofing is when an attacker pretends to be a trusted device, user, or service to deceive a system."
+  },
+  {
+    "question": "What is IP spoofing?",
+    "answer": "IP spoofing is when an attacker sends packets with a fake source IP address to hide identity or impersonate another system."
+  },
+  {
+    "question": "What is ARP spoofing?",
+    "answer": "ARP spoofing is an attack where false ARP messages are sent to link an attacker's MAC address with another device's IP address."
+  },
+  {
+    "question": "What is DNS attack?",
+    "answer": "A DNS attack targets the domain name system to redirect traffic, disrupt access, or poison DNS records."
+  },
+  {
+    "question": "What is botnet?",
+    "answer": "A botnet is a network of compromised devices controlled by an attacker, often used for DDoS attacks or spam."
+  },
+  {
+    "question": "What is ransomware?",
+    "answer": "Ransomware is malware that encrypts files or locks systems and demands payment for recovery."
+  },
+  {
+    "question": "What is trojan?",
+    "answer": "A trojan is malware disguised as legitimate software to trick users into installing it."
+  },
+  {
+    "question": "What is worm?",
+    "answer": "A worm is malware that spreads automatically across systems without needing user interaction."
+  },
+  {
+    "question": "What is spyware?",
+    "answer": "Spyware secretly monitors user activity and collects sensitive information without permission."
+  },
+  {
+    "question": "What is zero day attack?",
+    "answer": "A zero-day attack exploits a vulnerability that is unknown to the software vendor or has no available patch yet."
+  },
+  {
+    "question": "How to reduce false positives?",
+    "answer": "False positives can be reduced by improving training data, tuning thresholds, adding better features, and validating alerts with more context."
+  },
+  {
+    "question": "How to reduce false negatives?",
+    "answer": "False negatives can be reduced by training on more attack types, improving feature extraction, and combining signature, anomaly, and ML methods."
+  },
+  {
+    "question": "How can this project be made real world ready?",
+    "answer": "It can be improved with persistent log storage, IP blocking, authentication, email alerts, better datasets, model retraining, and deployment on a server."
+  },
+  {
+    "question": "Can this IDS block attacks?",
+    "answer": "Currently it detects and reports suspicious activity. To block attacks, it would need IPS features such as firewall integration or automatic rule updates."
+  },
+  {
+    "question": "Can this IDS send email alerts?",
+    "answer": "Yes, email alerts can be added by sending a message whenever the IDS detects high threat or repeated suspicious activity."
+  },
+  {
+    "question": "Can this IDS save alerts to database?",
+    "answer": "Yes, alerts can be stored in SQLite, MySQL, PostgreSQL, or MongoDB for history, reporting, and investigation."
+  },
+  {
+    "question": "Can this IDS detect unknown attacks?",
+    "answer": "It may detect some unknown attacks through anomaly detection, but performance depends on feature quality and training data."
+  },
+  {
+    "question": "Can this IDS detect malware?",
+    "answer": "It can detect suspicious network behavior related to malware, but it is not a full antivirus or malware scanner."
+  },
+  {
+    "question": "Can this IDS detect port scanning?",
+    "answer": "It may detect port scanning if the traffic pattern creates unusual destination ports, repeated attempts, or suspicious behavior learned by the model."
+  },
+  {
+    "question": "Can this IDS detect DDoS?",
+    "answer": "It may detect DDoS-like patterns if many unusual packets or anomalies are captured, but strong DDoS detection needs flow-level rate features."
+  },
+  {
+    "question": "What are limitations of this project?",
+    "answer": "Limitations include dependency on training data, possible false positives, limited packet features, no automatic blocking, and need for admin permission for packet capture."
+  },
+  {
+    "question": "What are advantages of this project?",
+    "answer": "Advantages include real-time monitoring, machine learning based detection, simple dashboard visualization, live logs, and a custom chatbot assistant."
+  },
+  {
+    "question": "What is future scope of this project?",
+    "answer": "Future scope includes database storage, email alerts, user login, firewall blocking, advanced feature extraction, deep learning models, and cloud deployment."
+  },
+  {
+    "question": "What is accuracy in IDS?",
+    "answer": "Accuracy measures how often the IDS correctly classifies traffic, but precision, recall, and false positive rate are also important."
+  },
+  {
+    "question": "What is precision?",
+    "answer": "Precision measures how many detected threats are actually real threats. High precision means fewer false alarms."
+  },
+  {
+    "question": "What is recall?",
+    "answer": "Recall measures how many real threats the IDS successfully detects. High recall means fewer missed attacks."
+  },
+  {
+    "question": "What is F1 score?",
+    "answer": "F1 score is the harmonic mean of precision and recall. It balances false positives and false negatives."
+  },
+  {
+    "question": "What is confusion matrix?",
+    "answer": "A confusion matrix shows correct and incorrect predictions for each class, including true positives, true negatives, false positives, and false negatives."
+  },
+  {
+    "question": "Why not rely only on accuracy?",
+    "answer": "Accuracy can be misleading when attack data is imbalanced. A model can look accurate while still missing important attacks."
+  },
+  {
+    "question": "What is data preprocessing?",
+    "answer": "Data preprocessing prepares raw data for model training by cleaning values, selecting features, encoding labels, and handling missing data."
+  },
+  {
+    "question": "What is label encoding?",
+    "answer": "Label encoding converts text labels such as normal or attack into numeric values that a machine learning model can use."
+  },
+  {
+    "question": "What is model training?",
+    "answer": "Model training is the process of teaching a machine learning algorithm to recognize patterns from labeled traffic data."
+  },
+  {
+    "question": "What is model testing?",
+    "answer": "Model testing evaluates how well the trained model performs on data it has not seen before."
+  },
+  {
+    "question": "Why save the model with joblib?",
+    "answer": "joblib saves the trained model to disk so the dashboard can load it quickly without retraining every time."
+  },
+  {
+    "question": "What is pandas used for?",
+    "answer": "pandas is used for data handling, creating DataFrames, and preparing features for training or prediction."
+  },
+  {
+    "question": "What is numpy used for?",
+    "answer": "NumPy is used for numerical arrays and feature preparation before sending data to the machine learning model."
+  },
+  {
+    "question": "What is scikit learn used for?",
+    "answer": "scikit-learn is used for machine learning model training, prediction, metrics, and text similarity in the custom chatbot."
+  },
+  {
+    "question": "What is TF IDF in chatbot?",
+    "answer": "TF-IDF is a text matching technique that converts questions into numeric vectors so the chatbot can find the closest stored question and answer."
+  },
+  {
+    "question": "How does your custom chatbot work?",
+    "answer": "The chatbot checks live IDS context first, then uses TF-IDF similarity to search chatbot_data.json and return the closest answer."
+  },
+  {
+    "question": "Is this chatbot trained?",
+    "answer": "It is a custom knowledge-base chatbot. It is not a large language model, but it behaves like a trained assistant for the project by searching curated Q&A data."
+  },
+  {
+    "question": "Can I add more chatbot knowledge?",
+    "answer": "Yes. Add more question and answer objects to chatbot_data.json, then restart or rerun Streamlit."
+  },
+  {
+    "question": "Why use a custom chatbot instead of Gemini?",
+    "answer": "A custom chatbot does not need an API key, internet, billing, quota, or external service. It is reliable for project demos."
+  },
+  {
+    "question": "Does the chatbot use live IDS values?",
+    "answer": "Yes. For questions about current traffic, status, normal packets, attacks, latest logs, and graph values, it reads the current dashboard context."
+  },
+  {
+    "question": "What should I ask the chatbot?",
+    "answer": "You can ask about IDS concepts, attacks, protocols, project files, model behavior, live traffic, attack count, normal packets, latest alerts, and future improvements."
+  },
+  {
+    "question": "Give me project summary for viva.",
+    "answer": "This project is a Real-Time AI Intrusion Detection System. It captures live packets using Scapy, extracts packet features, predicts normal or suspicious traffic using a trained ML model, visualizes results in Streamlit, and includes a custom chatbot for project and security questions."
+  },
+  {
+    "question": "Why is this project useful?",
+    "answer": "It is useful because it helps users monitor network traffic, detect suspicious behavior quickly, understand alerts, and learn about cybersecurity concepts through the chatbot."
+  },
+  {
+    "question": "What is the conclusion of this project?",
+    "answer": "The project shows that machine learning and real-time packet monitoring can be combined to build an interactive IDS that detects suspicious network activity and explains results to users."
+  },
+  {
+    "question": "What are the hardware requirements?",
+    "answer": "A normal laptop or desktop can run the dashboard, but packet capture and model processing work better with sufficient RAM, CPU, and administrator permissions."
+  },
+  {
+    "question": "What are the software requirements?",
+    "answer": "The software requirements include Python, Streamlit, Scapy, pandas, NumPy, scikit-learn, Flask, joblib, and Npcap on Windows for packet capture."
+  },
+  {
+    "question": "How to run this project?",
+    "answer": "Activate the virtual environment, install requirements, and run streamlit run dashboard_live.py. Then open the browser link and click Start IDS."
+  },
+  {
+    "question": "Why is IDS stopped?",
+    "answer": "IDS is stopped when the running state is false. Click Start IDS in the sidebar to begin live packet monitoring."
+  },
+  {
+    "question": "Why no packets are showing?",
+    "answer": "No packets may show if IDS is stopped, there is no network activity, packet capture permission is missing, or Npcap is not installed correctly."
+  },
+  {
+    "question": "Why chatbot is not answering like ChatGPT?",
+    "answer": "This chatbot is a local project chatbot. It answers from the custom knowledge base and live IDS data, not from a large online AI model."
+  },
+  {
+    "question": "How to make chatbot smarter?",
+    "answer": "Add more high-quality Q&A entries to chatbot_data.json and include different ways users may ask the same question."
+  },
+  {
+    "question": "What is live traffic?",
+    "answer": "Live traffic means the packets currently being captured from the network while the IDS is running."
+  },
+  {
+    "question": "What is latest event?",
+    "answer": "The latest event is the most recent packet log created by the IDS, showing whether traffic was normal or suspicious."
+  },
+  {
+    "question": "What does OK mean in logs?",
+    "answer": "OK means the IDS classified the packet as normal traffic."
+  },
+  {
+    "question": "What does ALERT mean in logs?",
+    "answer": "ALERT means the IDS classified the packet as suspicious or threat-like activity."
+  },
+  {
+    "question": "What is raw packet summary?",
+    "answer": "A raw packet summary is a short Scapy description of the packet layers, addresses, ports, and protocol details."
+  },
+  {
+    "question": "Why does the log show IP addresses?",
+    "answer": "The log shows IP addresses because packets contain source and destination address information used to understand communication direction."
+  },
+  {
+    "question": "Why does the log show https?",
+    "answer": "https usually indicates traffic using port 443, which is common for secure web browsing."
+  },
+  {
+    "question": "Can normal web browsing create many packets?",
+    "answer": "Yes. Opening a website can create many TCP and HTTPS packets because browsers load pages, images, scripts, and background requests."
+  },
+  {
+    "question": "Why do I see repeated packets?",
+    "answer": "Repeated packets can appear because network communication often involves multiple packets for one page load, connection setup, acknowledgements, and data transfer."
+  },
+  {
+    "question": "Can this project be deployed?",
+    "answer": "Yes, the dashboard can be deployed, but live packet capture usually works best on the local machine or a server with network capture permissions."
+  },
+  {
+    "question": "Can I make this project multi user?",
+    "answer": "Yes, multi-user support can be added with authentication, user sessions, and a database for storing each user's alerts."
+  },
+  {
+    "question": "Can I export reports?",
+    "answer": "Yes, report export can be added using CSV, PDF, or Excel generation from the captured logs and metrics."
+  },
+  {
+    "question": "Can I add login page?",
+    "answer": "Yes, a login page can be added to protect the dashboard and allow only authorized users to access IDS logs."
+  },
+  {
+    "question": "Can I add dark mode?",
+    "answer": "Yes, dark mode can be added by changing Streamlit theme settings or adding CSS for dark backgrounds and readable text colors."
+  },
+  {
+    "question": "Can I add severity levels?",
+    "answer": "Yes, alerts can be grouped into low, medium, and high severity based on model confidence, anomaly score, packet type, or repeated behavior."
+  },
+  {
+    "question": "Can I add IP blocking?",
+    "answer": "Yes, IP blocking can be added by integrating with firewall commands, but it must be done carefully to avoid blocking legitimate traffic."
+  },
+  {
+    "question": "Can I add notification sound?",
+    "answer": "Yes, a notification sound can be played when high threat alerts are detected, but it should be optional to avoid disturbing users."
+  },
+  {
+    "question": "Can I add search in logs?",
+    "answer": "Yes, log search can be added with a text input that filters logs by protocol, IP address, port, alert type, or keyword."
+  },
+  {
+    "question": "Can I add filters for attacks?",
+    "answer": "Yes, filters can be added to show only normal traffic, suspicious traffic, errors, latest logs, or high threat events."
+  },
+  {
+    "question": "Can I use deep learning?",
+    "answer": "Yes, deep learning models such as neural networks or LSTM models can be used, especially if you collect richer traffic flow features."
+  },
+  {
+    "question": "Can I use Wireshark with this project?",
+    "answer": "Yes, Wireshark can be used separately to inspect packet details and compare them with the IDS dashboard logs."
+  },
+  {
+    "question": "What is a packet?",
+    "answer": "A packet is a small unit of data sent over a network. It contains headers and payload information used for communication."
+  },
+  {
+    "question": "What is packet header?",
+    "answer": "A packet header contains control information such as source address, destination address, protocol, and port numbers."
+  },
+  {
+    "question": "What is packet payload?",
+    "answer": "Packet payload is the actual data carried by the packet after the header information."
+  },
+  {
+    "question": "What is IP address?",
+    "answer": "An IP address is a unique address used to identify a device on a network."
+  },
+  {
+    "question": "What is MAC address?",
+    "answer": "A MAC address is a hardware address assigned to a network interface card for local network communication."
+  },
+  {
+    "question": "What is HTTP?",
+    "answer": "HTTP is a web protocol used to transfer web pages and data between browsers and servers."
+  },
+  {
+    "question": "What is HTTPS?",
+    "answer": "HTTPS is the secure version of HTTP. It encrypts communication between the browser and server."
+  },
+  {
+    "question": "What is DNS?",
+    "answer": "DNS converts domain names like google.com into IP addresses that computers use to communicate."
+  },
+  {
+    "question": "What is SSH?",
+    "answer": "SSH is a secure protocol used to remotely access and manage systems over a network."
+  },
+  {
+    "question": "What is FTP?",
+    "answer": "FTP is a file transfer protocol used to move files between computers, but it is not secure unless protected by encryption."
+  },
+  {
+    "question": "What is VPN?",
+    "answer": "A VPN creates an encrypted tunnel between a device and a remote network, improving privacy and secure access."
+  },
+  {
+    "question": "What is encryption?",
+    "answer": "Encryption converts readable data into unreadable form so only authorized parties can understand it."
+  },
+  {
+    "question": "What is authentication?",
+    "answer": "Authentication verifies the identity of a user, device, or system before granting access."
+  },
+  {
+    "question": "What is authorization?",
+    "answer": "Authorization decides what an authenticated user or system is allowed to access or perform."
+  },
+  {
+    "question": "What is vulnerability?",
+    "answer": "A vulnerability is a weakness in a system that attackers can exploit."
+  },
+  {
+    "question": "What is exploit?",
+    "answer": "An exploit is a method or code used to take advantage of a vulnerability."
+  },
+  {
+    "question": "What is threat?",
+    "answer": "A threat is anything that can potentially harm a system, network, or data."
+  },
+  {
+    "question": "What is risk?",
+    "answer": "Risk is the chance that a threat will exploit a vulnerability and cause harm."
+  },
+  {
+    "question": "What is incident response?",
+    "answer": "Incident response is the process of detecting, analyzing, containing, and recovering from a cybersecurity incident."
+  },
+  {
+    "question": "What is log analysis?",
+    "answer": "Log analysis is the process of reviewing system or network logs to identify suspicious activity, errors, or patterns."
+  },
+  {
+    "question": "What is SIEM?",
+    "answer": "SIEM stands for Security Information and Event Management. It collects and analyzes security logs from many systems."
+  },
+  {
+    "question": "What is honeypot?",
+    "answer": "A honeypot is a decoy system designed to attract attackers and study their behavior."
+  },
+  {
+    "question": "What is packet filtering?",
+    "answer": "Packet filtering checks packet headers and decides whether traffic should be allowed, blocked, or logged."
+  },
+  {
+    "question": "What is network monitoring?",
+    "answer": "Network monitoring observes network traffic, devices, and performance to detect issues or suspicious activity."
+  },
+  {
+    "question": "How does the chatbot answer project questions?",
+    "answer": "The chatbot searches its local knowledge base and returns the closest stored answer. For live IDS questions, it reads dashboard metrics directly."
+  },
+  {
+    "question": "Does chatbot need internet?",
+    "answer": "No. This custom chatbot works locally using chatbot_data.json and scikit-learn text matching."
+  },
+  {
+    "question": "Does chatbot need API key?",
+    "answer": "No. The custom chatbot does not need OpenAI, Gemini, or any external API key."
+  },
+  {
+    "question": "How do I update chatbot answers?",
+    "answer": "Open chatbot_data.json, add or edit question and answer objects, save the file, and rerun Streamlit."
+  }
+]
